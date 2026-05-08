@@ -1,0 +1,122 @@
+---
+---
+
+<section id="education">
+  <div class="container">
+    <div class="sec-header rev">
+      <div class="sec-label">// 03. FORMACIÓN</div>
+      <h2 class="sec-title">Trayectoria Académica</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item rev d1">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-year">2025 — 2026 &nbsp;·&nbsp; EN CURSO</div>
+          <div class="tl-deg">Máster en Ciberseguridad en Redes + IA</div>
+          <div class="tl-inst">Tajamar · Madrid</div>
+        </div>
+      </div>
+      <div class="tl-item rev d2">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-year">2023 — 2025</div>
+          <div class="tl-deg">Grado Superior — Desarrollo de Aplicaciones Multiplataforma (DAM)</div>
+          <div class="tl-inst">IES Juan de la Cierva · Madrid</div>
+        </div>
+      </div>
+      <div class="tl-item rev d3">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-year">2021 — 2023</div>
+          <div class="tl-deg">Grado Medio — Sistemas Microinformáticos y Redes (SMR)</div>
+          <div class="tl-inst">Fundación Tomillo · Madrid</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #education { background: var(--bg1); }
+
+  .timeline {
+    position: relative;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--green), transparent);
+  }
+
+  .tl-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: calc(50% + 2.5rem);
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  .tl-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: calc(50% + 2.5rem);
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: 50%;
+    top: 1.2rem;
+    transform: translateX(-50%);
+    width: 13px;
+    height: 13px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--green), 0 0 24px rgba(0, 255, 136, 0.3);
+  }
+
+  .tl-card {
+    background: rgba(0, 255, 136, 0.025);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    max-width: 340px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .tl-card:hover { border-color: var(--border-h); box-shadow: var(--glow); }
+
+  .tl-year {
+    font-family: var(--fmono);
+    font-size: 0.68rem;
+    color: var(--green);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+  .tl-deg {
+    font-family: var(--forb);
+    font-size: 0.82rem;
+    color: var(--text1);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
+  .tl-inst {
+    font-family: var(--fmono);
+    font-size: 0.72rem;
+    color: var(--text3);
+  }
+
+  @media (max-width: 768px) {
+    .timeline::before { left: 0; }
+    .tl-item,
+    .tl-item:nth-child(even) {
+      justify-content: flex-start;
+      padding: 0 0 0 2rem;
+    }
+    .tl-dot { left: 0; transform: translateX(-40%); }
+  }
+</style>

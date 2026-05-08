@@ -1,0 +1,193 @@
+---
+---
+
+<section id="contact">
+  <div class="container">
+    <div class="sec-header rev">
+      <div class="sec-label">// 06. CONTACTO</div>
+      <h2 class="sec-title">Hablemos</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="rev-l">
+        <h3 class="contact-h3">¿INTERESADO EN COLABORAR?</h3>
+        <p class="contact-p">
+          Estoy disponible para oportunidades en entornos SOC, análisis de amenazas, seguridad perimetral,
+          gestión y administración de infraestructura de red. No dudes en contactarme.
+        </p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <div class="ci-label">EMAIL</div>
+              <div class="ci-value">
+                <a href="mailto:danielblanco2211@gmail.com">danielblanco2211@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <div class="ci-label">LINKEDIN</div>
+              <div class="ci-value">
+                <a href="https://linkedin.com/in/daniel-blanco-8622a033b" target="_blank" rel="noopener noreferrer">
+                  daniel-blanco-8622a033b
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <div>
+              <div class="ci-label">GITHUB</div>
+              <div class="ci-value">
+                <a href="https://github.com/danielBlanco-M" target="_blank" rel="noopener noreferrer">danielBlanco-M</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/daniel-blanco-8622a033b" target="_blank" rel="noopener noreferrer"
+             class="social-btn" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/danielBlanco-M" target="_blank" rel="noopener noreferrer"
+             class="social-btn" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:danielblanco2211@gmail.com" class="social-btn" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-terminal rev-r">
+        <div class="term-header">
+          <span class="tdot tr"></span>
+          <span class="tdot ty"></span>
+          <span class="tdot tg"></span>
+          <span class="term-label">bash — daniel@SOC:~</span>
+        </div>
+        <div class="term-body">
+          <div><span class="tp">daniel@SOC:~$</span> <span class="tc">whoami</span></div>
+          <div><span class="to">daniel_blanco_martin</span></div>
+          <div class="tblank"></div>
+          <div><span class="tp">daniel@SOC:~$</span> <span class="tc">cat status.txt</span></div>
+          <div><span class="ts">✓</span> <span class="tc">Disponible para oportunidades</span></div>
+          <div><span class="ts">✓</span> <span class="tc">Blue Team · Redes · Seguridad Perimetral</span></div>
+          <div><span class="ts">✓</span> <span class="tc">Open to remote &amp; on-site (Madrid)</span></div>
+          <div class="tblank"></div>
+          <div><span class="tp">daniel@SOC:~$</span> <span class="tc">ls certifications/</span></div>
+          <div><span class="to">CCNA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CyberOps_Associate</span></div>
+          <div><span class="to">CompTIA_A+ &nbsp;&nbsp;&nbsp; SC-900_Microsoft</span></div>
+          <div><span class="to">Fortinet_FCP_NSE4-NSE5</span></div>
+          <div class="tblank"></div>
+          <div><span class="tp">daniel@SOC:~$</span> <span class="tc">./contact.sh --email</span></div>
+          <div><span class="ts">[+]</span> <span class="tc">danielblanco2211@gmail.com</span></div>
+          <div class="tblank"></div>
+          <div><span class="tp">daniel@SOC:~$</span> <span class="t-cursor">█</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #contact { background: var(--bg0); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-h3 {
+    font-family: var(--forb);
+    font-size: 1.1rem;
+    color: var(--text1);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+  .contact-p { color: var(--text2); line-height: 1.85; margin-bottom: 2rem; font-size: 1rem; }
+
+  .contact-items { display: flex; flex-direction: column; gap: 0.8rem; }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--border);
+    background: rgba(0, 255, 136, 0.02);
+    transition: all 0.3s;
+  }
+  .contact-item:hover {
+    border-color: var(--border-h);
+    background: rgba(0, 255, 136, 0.05);
+  }
+  .contact-item i { color: var(--green); font-size: 1.05rem; width: 20px; text-align: center; }
+  .ci-label { font-family: var(--fmono); font-size: 0.62rem; color: var(--text3); letter-spacing: 1px; }
+  .ci-value { font-family: var(--fmono); font-size: 0.82rem; color: var(--text2); }
+  .ci-value a { color: var(--cyan); }
+  .ci-value a:hover { color: var(--green); }
+
+  .social-links { display: flex; gap: 0.8rem; margin-top: 2rem; }
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .social-btn:hover {
+    border-color: var(--green);
+    color: var(--green);
+    box-shadow: var(--glow);
+    background: rgba(0, 255, 136, 0.06);
+  }
+
+  /* Terminal */
+  .contact-terminal {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .term-header {
+    background: var(--bg3);
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .term-label {
+    font-family: var(--fmono);
+    font-size: 0.7rem;
+    color: var(--text3);
+    margin-left: 0.5rem;
+  }
+  .term-body {
+    padding: 1.5rem;
+    font-family: var(--fmono);
+    font-size: 0.8rem;
+    line-height: 2;
+  }
+  .tp { color: var(--green); }
+  .tc { color: var(--text2); }
+  .to { color: var(--cyan); }
+  .ts { color: #00ff88; }
+  .tblank { height: 0.5rem; }
+  .t-cursor { animation: blink 0.8s step-end infinite; color: var(--green); }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+</style>

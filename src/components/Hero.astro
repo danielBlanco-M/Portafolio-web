@@ -1,0 +1,310 @@
+---
+---
+
+<section id="hero">
+  <canvas id="matrix-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-status">
+      <span class="pulse-dot"></span>
+      CYBERSECURITY ANALYST &nbsp;|&nbsp; BLUE TEAM · REDES · PERÍMETRO &nbsp;|&nbsp; DISPONIBLE
+    </div>
+    <h1 class="hero-name glitch" data-text="DANIEL BLANCO">DANIEL BLANCO</h1>
+    <span class="hero-lastname">MARTIN</span>
+    <div class="hero-typing">
+      <span id="typing-text"></span><span class="cursor"></span>
+    </div>
+    <div class="hero-tags">
+      <span class="hero-tag">SOC ANALYST</span>
+      <span class="hero-tag">SIEM · WAZUH</span>
+      <span class="hero-tag">INCIDENT RESPONSE</span>
+      <span class="hero-tag">FORTINET NSE4/NSE5</span>
+      <span class="hero-tag">NETWORK SECURITY</span>
+      <span class="hero-tag">CCNA · CYBEROPS</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn btn-primary">
+        <i class="fas fa-terminal"></i>&nbsp;Ver Proyectos
+      </a>
+      <a href="#contact" class="btn btn-outline">
+        <i class="fas fa-envelope"></i>&nbsp;Contactar
+      </a>
+    </div>
+  </div>
+  <div class="scroll-ind">SCROLL DOWN <i class="fas fa-chevron-down"></i></div>
+</section>
+
+<style>
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #matrix-canvas {
+    position: absolute;
+    inset: 0;
+    opacity: 0.13;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(3, 3, 10, 0.7) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 950px;
+    padding: 2rem;
+    animation: fadeInUp 1s ease both;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--fmono);
+    font-size: 0.7rem;
+    color: var(--green);
+    border: 1px solid rgba(0, 255, 136, 0.25);
+    padding: 0.45rem 1.1rem;
+    margin-bottom: 2.2rem;
+    letter-spacing: 2.5px;
+    background: rgba(0, 255, 136, 0.04);
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); }
+    50%       { box-shadow: 0 0 0 6px rgba(0, 255, 136, 0); }
+  }
+
+  .hero-name {
+    font-family: var(--forb);
+    font-size: clamp(2.2rem, 7vw, 5rem);
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: var(--text1);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Glitch effect */
+  .glitch { animation: glitch-skew 5s infinite linear; }
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+  }
+  .glitch::before {
+    color: var(--cyan);
+    animation: glitch-a 5s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  }
+  .glitch::after {
+    color: #ff2d78;
+    animation: glitch-b 5s infinite;
+    clip-path: polygon(0 62%, 100% 62%, 100% 100%, 0 100%);
+  }
+  @keyframes glitch-skew {
+    0%, 96%  { transform: skew(0); }
+    97%      { transform: skew(2deg); }
+    98%      { transform: skew(-2deg); }
+    99%      { transform: skew(1deg); }
+    100%     { transform: skew(0); }
+  }
+  @keyframes glitch-a {
+    0%, 92% { transform: translate(0); opacity: 0; }
+    93%     { transform: translate(-3px, -1px); opacity: 0.8; }
+    95%     { transform: translate(3px, 1px); opacity: 0.8; }
+    97%     { transform: translate(-2px, 2px); opacity: 0.8; }
+    100%    { transform: translate(0); opacity: 0; }
+  }
+  @keyframes glitch-b {
+    0%, 90% { transform: translate(0); opacity: 0; }
+    91%     { transform: translate(3px, 1px); opacity: 0.8; }
+    93%     { transform: translate(-3px, -1px); opacity: 0.8; }
+    95%     { transform: translate(2px, 2px); opacity: 0.8; }
+    100%    { transform: translate(0); opacity: 0; }
+  }
+
+  .hero-lastname {
+    font-family: var(--forb);
+    font-size: clamp(1rem, 3vw, 2rem);
+    font-weight: 400;
+    letter-spacing: 8px;
+    color: var(--green);
+    margin-bottom: 1.8rem;
+    display: block;
+  }
+
+  .hero-typing {
+    font-family: var(--fmono);
+    font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+    color: var(--text2);
+    min-height: 1.8rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--green);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 0.8s step-end infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .hero-tag {
+    font-family: var(--fmono);
+    font-size: 0.68rem;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid rgba(0, 255, 136, 0.18);
+    color: var(--text2);
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.35);
+    transition: all 0.3s;
+  }
+  .hero-tag:hover {
+    border-color: var(--green);
+    color: var(--green);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.15);
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .scroll-ind {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--fmono);
+    font-size: 0.62rem;
+    color: var(--text3);
+    letter-spacing: 2px;
+    z-index: 10;
+    animation: scroll-bounce 2s ease-in-out infinite;
+  }
+  @keyframes scroll-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(8px); }
+  }
+</style>
+
+<script>
+  /* Matrix rain animation */
+  const canvas = document.getElementById('matrix-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d')!;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*><;:?/\\~|01';
+  const fs = 13;
+  let drops: number[] = [];
+
+  function initDrops() {
+    const cols = Math.floor(canvas.width / fs);
+    drops = Array.from({ length: cols }, () => Math.random() * -80);
+  }
+  initDrops();
+  window.addEventListener('resize', initDrops);
+
+  function drawMatrix() {
+    ctx.fillStyle = 'rgba(3,3,10,0.055)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.font = `${fs}px "Share Tech Mono", monospace`;
+
+    for (let i = 0; i < drops.length; i++) {
+      const ch = chars[Math.floor(Math.random() * chars.length)];
+      const r = Math.random();
+      ctx.fillStyle = r > 0.96 ? '#ffffff' : r > 0.82 ? '#00ff88' : '#007744';
+      ctx.fillText(ch, i * fs, drops[i] * fs);
+      if (drops[i] * fs > canvas.height && Math.random() > 0.975) drops[i] = 0;
+      drops[i] += 0.5;
+    }
+  }
+  setInterval(drawMatrix, 50);
+
+  /* Typing effect */
+  const phrases = [
+    'Analista de Redes y Ciberseguridad',
+    'Blue Team | SOC Analyst',
+    'Especialista Fortinet NSE4 / NSE5',
+    'SIEM · Incident Response · Threat Hunting',
+    'Network Security Engineer',
+  ];
+  let pi = 0, ci = 0, del = false;
+  const tEl = document.getElementById('typing-text')!;
+
+  (function type() {
+    const ph = phrases[pi];
+    if (del) {
+      ci--;
+      tEl.textContent = ph.slice(0, ci);
+      if (ci === 0) {
+        del = false;
+        pi = (pi + 1) % phrases.length;
+        setTimeout(type, 450);
+      } else {
+        setTimeout(type, 38);
+      }
+    } else {
+      ci++;
+      tEl.textContent = ph.slice(0, ci);
+      if (ci === ph.length) {
+        del = true;
+        setTimeout(type, 2200);
+      } else {
+        setTimeout(type, 75);
+      }
+    }
+  })();
+</script>

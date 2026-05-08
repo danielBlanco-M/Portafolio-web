@@ -1,0 +1,131 @@
+---
+---
+
+<nav id="navbar">
+  <div class="nav-logo">
+    <i class="fas fa-shield-halved"></i>
+    DBM<em>// SEC</em>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Formación</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#projects">Proyectos</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
+  <div class="nav-toggle" id="nav-toggle">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 1000;
+    padding: 1rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(3, 3, 10, 0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    transition: padding 0.3s, border-color 0.3s;
+  }
+
+  .nav-logo {
+    font-family: var(--forb);
+    font-size: 0.95rem;
+    color: var(--green);
+    letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .nav-logo em {
+    font-style: normal;
+    color: var(--text3);
+    font-size: 0.75rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--fmono);
+    font-size: 0.76rem;
+    color: var(--text2);
+    letter-spacing: 1px;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--green);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover {
+    color: var(--green);
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .nav-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--green);
+    transition: all 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 58px;
+      inset-inline: 0;
+      background: rgba(3, 3, 10, 0.97);
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+    }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: flex; }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle')!;
+  const navLinks = document.getElementById('nav-links')!;
+  const navbar = document.getElementById('navbar')!;
+
+  toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => navLinks.classList.remove('open'))
+  );
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navbar.style.padding = '0.55rem 2.5rem';
+      navbar.style.borderBottomColor = 'rgba(0,255,136,0.22)';
+    } else {
+      navbar.style.padding = '1rem 2.5rem';
+      navbar.style.borderBottomColor = 'rgba(0,255,136,0.12)';
+    }
+  });
+</script>

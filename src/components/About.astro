@@ -1,0 +1,192 @@
+---
+---
+
+<section id="about">
+  <div class="container">
+    <div class="sec-header rev">
+      <div class="sec-label">// 01. SOBRE MÍ</div>
+      <h2 class="sec-title">Perfil Profesional</h2>
+    </div>
+    <div class="about-grid">
+      <div class="rev-l">
+        <div class="about-photo-wrap">
+          <img src="/portfolio2.png" alt="Daniel Blanco Martin" class="about-photo" />
+        </div>
+        <div class="about-text">
+          <p>
+            Soy un profesional joven con una <strong>sólida base en redes y ciberseguridad</strong>,
+            con experiencia en soporte técnico y herramientas de monitorización de redes.
+          </p>
+          <p>
+            Me caracterizo por ser proactivo, resolutivo y orientado a la <strong>mejora continua</strong>.
+            Actualmente cursando un Máster en Ciberseguridad en Redes + IA en Tajamar, profundizando en
+            <strong>entornos SOC</strong>, análisis de amenazas avanzadas y respuesta a incidentes.
+          </p>
+          <p>
+            Mi enfoque principal es la <strong>seguridad defensiva (Blue Team)</strong>: detección y
+            respuesta a incidentes, correlación de eventos en SIEM, hardening de sistemas y gestión de
+            infraestructuras de red seguras.
+          </p>
+        </div>
+        <div class="about-info">
+          <div class="info-row">
+            <i class="fas fa-envelope"></i>
+            <span><a href="mailto:danielblanco2211@gmail.com">danielblanco2211@gmail.com</a></span>
+          </div>
+          <div class="info-row">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://linkedin.com/in/daniel-blanco-8622a033b" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/daniel-blanco-8622a033b
+            </a>
+          </div>
+          <div class="info-row">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/danielBlanco-M" target="_blank" rel="noopener noreferrer">github.com/danielBlanco-M</a>
+          </div>
+          <div class="info-row">
+            <i class="fas fa-location-dot"></i>
+            <span>Madrid, España</span>
+          </div>
+          <div class="info-row">
+            <i class="fas fa-language"></i>
+            <span>Español (Nativo) &nbsp;·&nbsp; Inglés (Intermedio)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid rev-r">
+        <div class="stat-card">
+          <div class="stat-num" data-count="5">0</div>
+          <div class="stat-lbl">CERTIFICACIONES</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="4">0</div>
+          <div class="stat-lbl">PROYECTOS GITHUB</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="5">0</div>
+          <div class="stat-lbl">AÑOS FORMACIÓN</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="3">0</div>
+          <div class="stat-lbl">ÁREAS ESPECIALIZACIÓN</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #about { background: var(--bg1); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--text2);
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    line-height: 1.85;
+  }
+  .about-text p strong { color: var(--green); }
+
+  .about-info {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .info-row {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    font-family: var(--fmono);
+    font-size: 0.82rem;
+  }
+  .info-row i { color: var(--green); width: 16px; text-align: center; }
+  .info-row span { color: var(--text2); }
+  .info-row a { color: var(--cyan); }
+  .info-row a:hover { color: var(--green); }
+
+  .about-photo-wrap {
+    margin-bottom: 2rem;
+    position: relative;
+    width: fit-content;
+  }
+  .about-photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid var(--green);
+    display: block;
+  }
+  .about-photo-wrap::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 140px;
+    height: 140px;
+    border: 1px solid rgba(0, 255, 136, 0.22);
+    z-index: -1;
+  }
+  .about-photo-wrap::after {
+    content: '● VERIFIED';
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    font-family: var(--fmono);
+    font-size: 0.58rem;
+    color: var(--green);
+    letter-spacing: 2px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .stat-card {
+    background: rgba(0, 255, 136, 0.025);
+    border: 1px solid var(--border);
+    padding: 1.8rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+  }
+  .stat-card:hover { border-color: var(--border-h); box-shadow: var(--glow); }
+  .stat-num {
+    font-family: var(--forb);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1;
+  }
+  .stat-lbl {
+    font-family: var(--fmono);
+    font-size: 0.66rem;
+    color: var(--text3);
+    letter-spacing: 1px;
+    margin-top: 0.4rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>

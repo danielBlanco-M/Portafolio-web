@@ -1,0 +1,185 @@
+/* ============================================================
+   VARIABLES & RESET
+   ============================================================ */
+:root {
+  --bg0: #03030a;
+  --bg1: #080812;
+  --bg2: #0d0d1a;
+  --bg3: #111120;
+  --green: #00ff88;
+  --green-dim: #00cc6a;
+  --green-dark: #007744;
+  --cyan: #00d4ff;
+  --cyan-dim: #008eaa;
+  --purple: #9b59b6;
+  --text1: #eeeef5;
+  --text2: #aaaabf;
+  --text3: #55557a;
+  --border: rgba(0, 255, 136, 0.12);
+  --border-h: rgba(0, 255, 136, 0.4);
+  --glow: 0 0 24px rgba(0, 255, 136, 0.25);
+  --glow-c: 0 0 24px rgba(0, 212, 255, 0.25);
+  --fmono: 'Share Tech Mono', monospace;
+  --forb: 'Orbitron', monospace;
+  --fbody: 'Rajdhani', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg0);
+  color: var(--text1);
+  font-family: var(--fbody);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Scanlines overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.025) 2px,
+    rgba(0, 0, 0, 0.025) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+a { color: var(--green); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--cyan); }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg1); }
+::-webkit-scrollbar-thumb { background: var(--green-dark); border-radius: 3px; }
+
+/* ============================================================
+   LAYOUT COMMONS
+   ============================================================ */
+section { padding: 6rem 2rem; }
+.container { max-width: 1120px; margin: 0 auto; }
+
+.sec-header { text-align: center; margin-bottom: 4rem; }
+
+.sec-label {
+  font-family: var(--fmono);
+  font-size: 0.72rem;
+  color: var(--green);
+  letter-spacing: 3px;
+  margin-bottom: 0.6rem;
+}
+
+.sec-title {
+  font-family: var(--forb);
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text1);
+  letter-spacing: 2px;
+  display: inline-block;
+  position: relative;
+}
+.sec-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+}
+
+.sec-desc {
+  margin-top: 1.8rem;
+  color: var(--text2);
+  font-size: 1rem;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================ */
+.rev {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.rev-l {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.rev-r {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.rev.vis, .rev-l.vis, .rev-r.vis {
+  opacity: 1;
+  transform: none;
+}
+
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+.d4 { transition-delay: 0.4s; }
+
+/* ============================================================
+   SHARED BUTTON STYLES
+   ============================================================ */
+.btn {
+  font-family: var(--forb);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0.85rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-primary {
+  background: var(--green);
+  color: #000;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+.btn-primary:hover {
+  background: var(--cyan);
+  box-shadow: 0 0 22px rgba(0, 212, 255, 0.5);
+  transform: translateY(-2px);
+  color: #000;
+}
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+.btn-outline:hover {
+  background: rgba(0, 255, 136, 0.08);
+  box-shadow: var(--glow);
+  transform: translateY(-2px);
+  color: var(--green);
+}
+
+/* ============================================================
+   TERMINAL WINDOW DOTS — shared by Projects & Contact
+   ============================================================ */
+.tdot { width: 10px; height: 10px; border-radius: 50%; }
+.tr { background: #ff5f57; }
+.ty { background: #ffbd2e; }
+.tg { background: #28c840; }
